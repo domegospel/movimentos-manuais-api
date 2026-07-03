@@ -10,7 +10,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/produtos")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*")
 public class ProdutoCosifController {
 
     private final ProdutoCosifService produtoCosifService;

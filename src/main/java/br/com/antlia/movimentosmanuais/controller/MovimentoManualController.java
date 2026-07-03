@@ -13,7 +13,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/movimentos-manuais")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*")
 public class MovimentoManualController {
 
     private final MovimentoManualService movimentoManualService;
