@@ -233,3 +233,35 @@ https://github.com/domegospel/movimentos-manuais-frontend
 - Os services foram implementados com interface e implementação.
 - O tratamento de erros foi centralizado com `@RestControllerAdvice`.
 - O CORS foi configurado globalmente para permitir chamadas do Angular em `http://localhost:4200`.
+
+## Versão alternativa com arquitetura hexagonal
+
+Também foi desenvolvida uma segunda versão deste backend utilizando **Arquitetura Hexagonal**, também conhecida como **Ports and Adapters**.
+
+Essa versão mantém as mesmas regras de negócio e os mesmos endpoints REST, mas separa melhor o domínio, os casos de uso, as portas de entrada, as portas de saída e os adapters de infraestrutura.
+
+Repositório da versão hexagonal:
+
+```text
+https://github.com/domegospel/movimentos-manuais-api-hexagonal
+```
+
+### Diferença entre as versões
+
+```text
+movimentos-manuais-api
+Arquitetura em camadas tradicional:
+
+Controller -> Service -> Repository -> Entity -> Banco
+```
+
+```text
+movimentos-manuais-api-hexagonal
+Arquitetura hexagonal:
+
+Controller -> Use Case -> Application Service -> Output Port -> Adapter -> Repository -> Banco
+```
+
+A versão em camadas foi mantida como implementação objetiva e aderente ao escopo do desafio.
+
+A versão hexagonal foi criada como alternativa arquitetural, demonstrando separação entre domínio, casos de uso, portas e adapters.
